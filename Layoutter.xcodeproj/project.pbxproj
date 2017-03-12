@@ -10,6 +10,18 @@
 		E249840B1E754A4F0083D374 /* Layoutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24984011E754A4F0083D374 /* Layoutter.framework */; };
 		E24984101E754A4F0083D374 /* LayoutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249840F1E754A4F0083D374 /* LayoutterTests.swift */; };
 		E24984121E754A4F0083D374 /* Layoutter.h in Headers */ = {isa = PBXBuildFile; fileRef = E24984041E754A4F0083D374 /* Layoutter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E249843F1E754C290083D374 /* AspectLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984331E754C290083D374 /* AspectLayout.swift */; };
+		E24984401E754C290083D374 /* BackgroundLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984341E754C290083D374 /* BackgroundLayout.swift */; };
+		E24984411E754C290083D374 /* EmptyViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984351E754C290083D374 /* EmptyViewLayout.swift */; };
+		E24984421E754C290083D374 /* FloatLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984361E754C290083D374 /* FloatLayout.swift */; };
+		E24984431E754C290083D374 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984371E754C290083D374 /* GridLayout.swift */; };
+		E24984441E754C290083D374 /* HorizontalDecoratingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984381E754C290083D374 /* HorizontalDecoratingLayout.swift */; };
+		E24984451E754C290083D374 /* InsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24984391E754C290083D374 /* InsetLayout.swift */; };
+		E24984461E754C290083D374 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843A1E754C290083D374 /* Layout.swift */; };
+		E24984471E754C290083D374 /* SizeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843B1E754C290083D374 /* SizeLayout.swift */; };
+		E24984481E754C290083D374 /* UIVIew+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843C1E754C290083D374 /* UIVIew+Layout.swift */; };
+		E24984491E754C290083D374 /* VerticalDecoratingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */; };
+		E249844A1E754C290083D374 /* ZStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843E1E754C290083D374 /* ZStackLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +41,18 @@
 		E249840A1E754A4F0083D374 /* LayoutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LayoutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E249840F1E754A4F0083D374 /* LayoutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutterTests.swift; sourceTree = "<group>"; };
 		E24984111E754A4F0083D374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E24984331E754C290083D374 /* AspectLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AspectLayout.swift; path = Sources/AspectLayout.swift; sourceTree = SOURCE_ROOT; };
+		E24984341E754C290083D374 /* BackgroundLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundLayout.swift; path = Sources/BackgroundLayout.swift; sourceTree = SOURCE_ROOT; };
+		E24984351E754C290083D374 /* EmptyViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewLayout.swift; path = Sources/EmptyViewLayout.swift; sourceTree = SOURCE_ROOT; };
+		E24984361E754C290083D374 /* FloatLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatLayout.swift; path = Sources/FloatLayout.swift; sourceTree = SOURCE_ROOT; };
+		E24984371E754C290083D374 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridLayout.swift; path = Sources/GridLayout.swift; sourceTree = SOURCE_ROOT; };
+		E24984381E754C290083D374 /* HorizontalDecoratingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalDecoratingLayout.swift; path = Sources/HorizontalDecoratingLayout.swift; sourceTree = SOURCE_ROOT; };
+		E24984391E754C290083D374 /* InsetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsetLayout.swift; path = Sources/InsetLayout.swift; sourceTree = SOURCE_ROOT; };
+		E249843A1E754C290083D374 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Sources/Layout.swift; sourceTree = SOURCE_ROOT; };
+		E249843B1E754C290083D374 /* SizeLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizeLayout.swift; path = Sources/SizeLayout.swift; sourceTree = SOURCE_ROOT; };
+		E249843C1E754C290083D374 /* UIVIew+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIVIew+Layout.swift"; path = "Sources/UIVIew+Layout.swift"; sourceTree = SOURCE_ROOT; };
+		E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalDecoratingLayout.swift; path = Sources/VerticalDecoratingLayout.swift; sourceTree = SOURCE_ROOT; };
+		E249843E1E754C290083D374 /* ZStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZStackLayout.swift; path = Sources/ZStackLayout.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +95,18 @@
 		E24984031E754A4F0083D374 /* Layoutter */ = {
 			isa = PBXGroup;
 			children = (
+				E24984331E754C290083D374 /* AspectLayout.swift */,
+				E24984341E754C290083D374 /* BackgroundLayout.swift */,
+				E24984351E754C290083D374 /* EmptyViewLayout.swift */,
+				E24984361E754C290083D374 /* FloatLayout.swift */,
+				E24984371E754C290083D374 /* GridLayout.swift */,
+				E24984381E754C290083D374 /* HorizontalDecoratingLayout.swift */,
+				E24984391E754C290083D374 /* InsetLayout.swift */,
+				E249843A1E754C290083D374 /* Layout.swift */,
+				E249843B1E754C290083D374 /* SizeLayout.swift */,
+				E249843C1E754C290083D374 /* UIVIew+Layout.swift */,
+				E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */,
+				E249843E1E754C290083D374 /* ZStackLayout.swift */,
 				E24984041E754A4F0083D374 /* Layoutter.h */,
 				E24984051E754A4F0083D374 /* Info.plist */,
 			);
@@ -149,6 +185,7 @@
 					E24984001E754A4F0083D374 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 92YKVDAGTG;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					E24984091E754A4F0083D374 = {
@@ -198,6 +235,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24984491E754C290083D374 /* VerticalDecoratingLayout.swift in Sources */,
+				E24984481E754C290083D374 /* UIVIew+Layout.swift in Sources */,
+				E24984471E754C290083D374 /* SizeLayout.swift in Sources */,
+				E249844A1E754C290083D374 /* ZStackLayout.swift in Sources */,
+				E24984451E754C290083D374 /* InsetLayout.swift in Sources */,
+				E24984441E754C290083D374 /* HorizontalDecoratingLayout.swift in Sources */,
+				E24984421E754C290083D374 /* FloatLayout.swift in Sources */,
+				E249843F1E754C290083D374 /* AspectLayout.swift in Sources */,
+				E24984431E754C290083D374 /* GridLayout.swift in Sources */,
+				E24984461E754C290083D374 /* Layout.swift in Sources */,
+				E24984401E754C290083D374 /* BackgroundLayout.swift in Sources */,
+				E24984411E754C290083D374 /* EmptyViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +371,7 @@
 		E24984161E754A4F0083D374 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92YKVDAGTG;
@@ -334,6 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FarzadShbfn.Layoutter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +392,7 @@
 		E24984171E754A4F0083D374 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92YKVDAGTG;
@@ -360,6 +412,7 @@
 		E24984191E754A4F0083D374 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 92YKVDAGTG;
 				INFOPLIST_FILE = LayoutterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +425,7 @@
 		E249841A1E754A4F0083D374 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 92YKVDAGTG;
 				INFOPLIST_FILE = LayoutterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

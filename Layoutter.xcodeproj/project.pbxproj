@@ -95,18 +95,9 @@
 		E24984031E754A4F0083D374 /* Layoutter */ = {
 			isa = PBXGroup;
 			children = (
-				E24984331E754C290083D374 /* AspectLayout.swift */,
-				E24984341E754C290083D374 /* BackgroundLayout.swift */,
-				E24984351E754C290083D374 /* EmptyViewLayout.swift */,
-				E24984361E754C290083D374 /* FloatLayout.swift */,
-				E24984371E754C290083D374 /* GridLayout.swift */,
-				E24984381E754C290083D374 /* HorizontalDecoratingLayout.swift */,
-				E24984391E754C290083D374 /* InsetLayout.swift */,
+				E249844C1E75524B0083D374 /* Shared */,
+				E249844B1E7552410083D374 /* Leaf */,
 				E249843A1E754C290083D374 /* Layout.swift */,
-				E249843B1E754C290083D374 /* SizeLayout.swift */,
-				E249843C1E754C290083D374 /* UIVIew+Layout.swift */,
-				E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */,
-				E249843E1E754C290083D374 /* ZStackLayout.swift */,
 				E24984041E754A4F0083D374 /* Layoutter.h */,
 				E24984051E754A4F0083D374 /* Info.plist */,
 			);
@@ -120,6 +111,31 @@
 				E24984111E754A4F0083D374 /* Info.plist */,
 			);
 			path = LayoutterTests;
+			sourceTree = "<group>";
+		};
+		E249844B1E7552410083D374 /* Leaf */ = {
+			isa = PBXGroup;
+			children = (
+				E249843C1E754C290083D374 /* UIVIew+Layout.swift */,
+			);
+			name = Leaf;
+			sourceTree = "<group>";
+		};
+		E249844C1E75524B0083D374 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E24984331E754C290083D374 /* AspectLayout.swift */,
+				E24984341E754C290083D374 /* BackgroundLayout.swift */,
+				E24984351E754C290083D374 /* EmptyViewLayout.swift */,
+				E24984361E754C290083D374 /* FloatLayout.swift */,
+				E24984371E754C290083D374 /* GridLayout.swift */,
+				E24984381E754C290083D374 /* HorizontalDecoratingLayout.swift */,
+				E24984391E754C290083D374 /* InsetLayout.swift */,
+				E249843B1E754C290083D374 /* SizeLayout.swift */,
+				E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */,
+				E249843E1E754C290083D374 /* ZStackLayout.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +470,7 @@
 				E24984171E754A4F0083D374 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E24984181E754A4F0083D374 /* Build configuration list for PBXNativeTarget "LayoutterTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +479,7 @@
 				E249841A1E754A4F0083D374 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

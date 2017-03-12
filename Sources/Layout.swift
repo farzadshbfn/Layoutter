@@ -26,7 +26,7 @@ protocol Layout {
 
 /// Wraps a layout in SpecificLayout to generalize.
 /// Usage: Layout can not be stored as variable because of associatedtype. use this struct instead.
-struct SpecificLayout<C>: Layout {
+struct AnyLayout<C>: Layout {
 	var _layout: (_ in: CGRect)-> ()
 	var _sizeThatFits: (CGSize) -> CGSize
 	var _contents: () -> [C]

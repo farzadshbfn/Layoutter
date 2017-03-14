@@ -1,10 +1,3 @@
-//
-//  HorizontalDecoratingLayout.swift
-//  filimo
-//
-//  Created by Farzad Sharbafian on 7/10/16.
-//  Copyright © 2016 Sabaidea. All rights reserved.
-//
 
 import Foundation
 

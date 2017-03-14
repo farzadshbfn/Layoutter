@@ -1,10 +1,3 @@
-//
-//  VerticalDecoratingLayout.swift
-//  filimo
-//
-//  Created by Farzad Sharbafian on 7/9/16.
-//  Copyright © 2016 Sabaidea. All rights reserved.
-//
 
 import Foundation
 

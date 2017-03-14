@@ -1,6 +1,4 @@
 /*
-Copyright (C) 2016 Apple Inc. All Rights Reserved.
-See LICENSE.txt for this sample’s licensing information
 
 Abstract:
 Defines the `Layout` protocol.
@@ -13,7 +11,7 @@ protocol Layout {
 	/// Lay out this layout and all of its contained layouts within `rect`.
 	mutating func layout(in rect: CGRect)
 	
-  /// Returns the size needed to lay out this layout with no loss.
+	/// Returns the size needed to lay out this layout with no loss.
 	func sizeThatFits(_ size: CGSize) -> CGSize
 	
 	/// The type of the leaf content elements in this layout.

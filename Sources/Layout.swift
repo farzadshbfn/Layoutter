@@ -7,7 +7,7 @@ Defines the `Layout` protocol.
 import CoreGraphics
 
 /// A type that can layout itself and its contents.
-protocol Layout {
+public protocol Layout {
 	/// Lay out this layout and all of its contained layouts within `rect`.
 	mutating func layout(in rect: CGRect)
 	
@@ -24,18 +24,10 @@ protocol Layout {
 
 /// Wraps a layout in SpecificLayout to generalize.
 /// Usage: Layout can not be stored as variable because of associatedtype. use this struct instead.
-struct AnyLayout<C>: Layout {
+public struct AnyLayout<C>: Layout {
 	var _layout: (_ in: CGRect)-> ()
 	var _sizeThatFits: (CGSize) -> CGSize
 	var _contents: () -> [C]
-	
-	/// Changes layout direclty.
-//	init <L: Layout> (_ selfie: inout L) where L.Content == C {
-//		_layout = { selfie.layout(in: $0) }
-//		_sizeThatFits = { selfie.sizeThatFits($0) }
-//		_contents = { selfie.contents }
-//		
-//	}
 	
 	/// Changes Layouts, but can not fetch info from Layout itself.
 	/// like: current frame or etc.
@@ -46,15 +38,15 @@ struct AnyLayout<C>: Layout {
 		_contents = { selfie.contents }
 	}
 	
-	func layout(in rect: CGRect) {
+	public func layout(in rect: CGRect) {
 		_layout(rect)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		return _sizeThatFits(size)
 	}
 	
-	var contents: [C] {
+	public var contents: [C] {
 		return _contents()
 	}
 }

@@ -1,7 +1,7 @@
 
 import Foundation
 
-enum GridLayoutDirection {
+public enum GridLayoutDirection {
 	case vertical(UIControlContentHorizontalAlignment)
 	case horizontal(UIControlContentVerticalAlignment)
 	
@@ -16,23 +16,23 @@ enum GridLayoutDirection {
 
 private let errorThreshold: CGFloat = 0.000001
 
-struct GridLayout<Child: Layout>: Layout {
-	typealias Content = Child.Content
+public struct GridLayout<Child: Layout>: Layout {
+	public typealias Content = Child.Content
 	
-	typealias Cut = (childIndex: Int, size: CGSize)
-	typealias VerticalCut = (row: [Cut], height: CGFloat)
-	typealias HorizontalCut = (column: [Cut], width: CGFloat)
+	public typealias Cut = (childIndex: Int, size: CGSize)
+	public typealias VerticalCut = (row: [Cut], height: CGFloat)
+	public typealias HorizontalCut = (column: [Cut], width: CGFloat)
 	
-	var children: [Child]
-	var direction: GridLayoutDirection
-	var itemSpacing: CGFloat
-	var lineSpacing: CGFloat
+	public var children: [Child]
+	public var direction: GridLayoutDirection
+	public var itemSpacing: CGFloat
+	public var lineSpacing: CGFloat
 	// reverses items in a row/column
-	var reverseSection: Bool
+	public var reverseSection: Bool
 	// .Vertical: fills from bottom, .Horizontal: Fills from right
-	var reverseFill: Bool
+	public var reverseFill: Bool
 	
-	init (children: [Child],
+	public init (children: [Child],
 	      direction: GridLayoutDirection,
 	      itemSpacing: CGFloat,
 	      lineSpacing: CGFloat,
@@ -46,7 +46,7 @@ struct GridLayout<Child: Layout>: Layout {
 		self.reverseFill = reverseFill
 	}
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		switch direction {
 		case let .vertical(horizontalAlignment): layoutVertical(horizontalAlignment, in: rect)
 		case let .horizontal(verticalAlignment): layoutHorizontal(verticalAlignment, in: rect)
@@ -201,14 +201,14 @@ struct GridLayout<Child: Layout>: Layout {
 	}
 	
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		switch direction {
 		case .vertical(_): return cutRow(in: size).1
 		case .horizontal(_): return cutColumn(in: size).1
 		}
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return children.flatMap { $0.contents }
 	}
 }

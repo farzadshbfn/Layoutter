@@ -2,18 +2,18 @@
 import Foundation
 
 
-struct EmptyViewLayout: Layout {
-	typealias Content = UIView
+public struct EmptyViewLayout: Layout {
+	public typealias Content = UIView
 	
-	func layout(in rect: CGRect) {
+	public func layout(in rect: CGRect) {
 		// Does nothing
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		return .zero
 	}
 	
-	var contents: [UIView] {
+	public var contents: [UIView] {
 		return []
 	}
 }

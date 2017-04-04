@@ -2,18 +2,18 @@
 import CoreGraphics
 
 /// A layout that diplays its background content behind its foreground content.
-struct BackgroundLayout<Background: Layout, Foreground: Layout>: Layout where Background.Content == Foreground.Content {
-	typealias Content = Background.Content
+public struct BackgroundLayout<Background: Layout, Foreground: Layout>: Layout where Background.Content == Foreground.Content {
+	public typealias Content = Background.Content
 	
-	var background: Background
-	var foreground: Foreground
+	public var background: Background
+	public var foreground: Foreground
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		background.layout(in: rect)
 		foreground.layout(in: rect)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		let backSize = background.sizeThatFits(size)
 		let foreSize = foreground.sizeThatFits(size)
 		let width = max(backSize.width, foreSize.width)
@@ -22,7 +22,7 @@ struct BackgroundLayout<Background: Layout, Foreground: Layout>: Layout where Ba
 		return CGSize(width: width, height: height)
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return background.contents + foreground.contents
 	}
 }
@@ -36,7 +36,7 @@ layouts together.
 */
 extension Layout {
 	/// Returns a layout that shows `self` in front of `background`.
-	func withBackground<Background: Layout>(_ background: Background) -> BackgroundLayout<Background, Self> where Background.Content == Content {
+	public func withBackground<Background: Layout>(_ background: Background) -> BackgroundLayout<Background, Self> where Background.Content == Content {
 		return BackgroundLayout(background: background, foreground: self)
 	}
 }

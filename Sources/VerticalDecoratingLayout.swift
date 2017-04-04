@@ -2,16 +2,16 @@
 import Foundation
 
 // A layout that decorates two layouts on top and bottom
-struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layout where ChildContent.Content == Decoration.Content {
+public struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layout where ChildContent.Content == Decoration.Content {
 	
-	typealias Content = ChildContent.Content
+	public typealias Content = ChildContent.Content
 	
-	var decoration: InsetLayout<Decoration>
-	var content: InsetLayout<ChildContent>
+	public var decoration: InsetLayout<Decoration>
+	public var content: InsetLayout<ChildContent>
 	
-	var alignment: UIControlContentVerticalAlignment
+	public var alignment: UIControlContentVerticalAlignment
 	
-	init(decoration: Decoration,
+	public init(decoration: Decoration,
 	     content: ChildContent,
 	     spacing: CGFloat = 8.0,
 	     alignment: UIControlContentVerticalAlignment = .center) {
@@ -21,7 +21,7 @@ struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layou
 		self.alignment = alignment
 	}
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		let contentRect = self.contentRect(in: rect)
 		let decorationRect = self.decorationRect(in: rect)
 		
@@ -29,7 +29,7 @@ struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layou
 		decoration.layout(in: decorationRect)
 	}
 	
-	func decorationRect(in rect: CGRect) -> CGRect {
+	public func decorationRect(in rect: CGRect) -> CGRect {
 		var dstRect = rect
 		
 		switch alignment {
@@ -48,7 +48,7 @@ struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layou
 		return dstRect
 	}
 	
-	func contentRect(in rect: CGRect) -> CGRect {
+	public func contentRect(in rect: CGRect) -> CGRect {
 		var dstRect = rect
 		
 		switch alignment {
@@ -70,7 +70,7 @@ struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layou
 		return dstRect
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		let contentSize: CGSize!
 		let decorationSize: CGSize!
 		
@@ -97,7 +97,7 @@ struct VerticalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layou
 		return CGSize(width: width, height: height)
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return decoration.contents + content.contents
 	}
 }

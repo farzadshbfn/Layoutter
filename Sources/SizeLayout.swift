@@ -1,17 +1,17 @@
 
 import Foundation
 
-struct SizeLayout<Child: Layout>: Layout {
-	typealias Content = Child.Content
+public struct SizeLayout<Child: Layout>: Layout {
+	public typealias Content = Child.Content
 	
-	var child: Child
-	var size: CGSize
+	public var child: Child
+	public var size: CGSize
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		child.layout(in: rect)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		var checkSize = size
 		checkSize.width = self.size.width.isNaN ? checkSize.width : self.size.width
 		checkSize.height = self.size.height.isNaN ? checkSize.height : self.size.height
@@ -23,28 +23,28 @@ struct SizeLayout<Child: Layout>: Layout {
 		return childSize
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return child.contents
 	}
 }
 
 
 extension Layout {
-	func withSize(width: CGFloat = CGFloat.nan, height: CGFloat = CGFloat.nan) -> SizeLayout<Self> {
+	public func withSize(width: CGFloat = CGFloat.nan, height: CGFloat = CGFloat.nan) -> SizeLayout<Self> {
 		return self.withSize(CGSize(width: width, height: height))
 	}
 	
-	func withSize(_ size: CGSize) -> SizeLayout<Self> {
+	public func withSize(_ size: CGSize) -> SizeLayout<Self> {
 		return SizeLayout(child: self, size: CGSize(width: size.width, height: size.height))
 	}
 }
 
 extension SizeLayout {
-	func withSize(width: CGFloat = CGFloat.nan, height: CGFloat = CGFloat.nan) -> SizeLayout<Child> {
+	public func withSize(width: CGFloat = CGFloat.nan, height: CGFloat = CGFloat.nan) -> SizeLayout<Child> {
 		return withSize(CGSize(width: width, height: height))
 	}
 	
-	func withSize(_ size: CGSize) -> SizeLayout<Child> {
+	public func withSize(_ size: CGSize) -> SizeLayout<Child> {
 		var dstSize = self.size
 		dstSize.width = size.width.isNaN ? dstSize.width : size.width
 		dstSize.height = size.height.isNaN ? dstSize.height : size.height

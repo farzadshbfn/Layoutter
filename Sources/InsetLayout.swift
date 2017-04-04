@@ -2,12 +2,12 @@
 import UIKit
 
 /// An layout that insets its child content.
-struct InsetLayout<Child: Layout>: Layout {
-	typealias Content = Child.Content
+public struct InsetLayout<Child: Layout>: Layout {
+	public typealias Content = Child.Content
 	
-	var child: Child
+	public var child: Child
 	
-	var insets: UIEdgeInsets
+	public var insets: UIEdgeInsets
 	
 	/*
 	This initializer is private because the canonical way to inset a layout
@@ -18,13 +18,13 @@ struct InsetLayout<Child: Layout>: Layout {
 		self.insets = insets
 	}
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		let rect = UIEdgeInsetsInsetRect(rect, insets)
 		
 		child.layout(in: rect)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		var dstSize = size
 		dstSize.width -= insets.left + insets.right
 		dstSize.height -= insets.top + insets.bottom
@@ -37,7 +37,7 @@ struct InsetLayout<Child: Layout>: Layout {
 		return CGSize(width: width, height: height)
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return child.contents
 	}
 }
@@ -51,19 +51,19 @@ layouts together.
 */
 extension Layout {
 	/// Makes an inset layout.
-	func withInsets(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> InsetLayout<Self> {
+	public func withInsets(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> InsetLayout<Self> {
 		let insets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
 		
 		return withInsets(insets)
 	}
 	
 	/// Makes an inset layout.
-	func withInsets(all insets: CGFloat) -> InsetLayout<Self> {
+	public func withInsets(all insets: CGFloat) -> InsetLayout<Self> {
 		return withInsets(top: insets, left: insets, bottom: insets, right: insets)
 	}
 	
 	/// Makes an inset layout.
-	func withInsets(_ insets: UIEdgeInsets) -> InsetLayout<Self> {
+	public func withInsets(_ insets: UIEdgeInsets) -> InsetLayout<Self> {
 		return InsetLayout(child: self, insets: insets)
 	}
 }
@@ -71,19 +71,19 @@ extension Layout {
 // MARK: - In this extension we define methods that allow us to easily chain insetLayouts
 extension InsetLayout {
 	/// Makes an inset layout.
-	func withInsets(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> InsetLayout<Child> {
+	public func withInsets(top: CGFloat = 0, left: CGFloat = 0, bottom: CGFloat = 0, right: CGFloat = 0) -> InsetLayout<Child> {
 		let insets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
 		
 		return withInsets(insets)
 	}
 	
 	/// Makes an inset layout.
-	func withInsets(all insets: CGFloat) -> InsetLayout<Child> {
+	public func withInsets(all insets: CGFloat) -> InsetLayout<Child> {
 		return withInsets(top: insets, left: insets, bottom: insets, right: insets)
 	}
 	
 	/// Makes an inset layout.
-	func withInsets(_ insets: UIEdgeInsets) -> InsetLayout<Child> {
+	public func withInsets(_ insets: UIEdgeInsets) -> InsetLayout<Child> {
 		var dstInsets = self.insets
 		dstInsets.top += insets.top
 		dstInsets.left += insets.left

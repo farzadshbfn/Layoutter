@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol Layoutter {
+public protocol Layoutter {
 	/// The type of the leaf content elements in this layout.
 	associatedtype Content
 	
@@ -19,11 +19,11 @@ protocol Layoutter {
 
 extension Layoutter where Self: Layout {
 	
-	func layout(in rect: CGRect) {
+	public func layout(in rect: CGRect) {
 		layout.layout(in: rect)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		return layout.sizeThatFits(size)
 	}
 }
@@ -31,7 +31,7 @@ extension Layoutter where Self: Layout {
 
 extension Layoutter where Self: UIView {
 	
-	func layoutSubviews() {
+	public func layoutSubviews() {
 		layout(in: self.bounds)
 	}
 }

@@ -4,22 +4,22 @@ import Foundation
 /**
 *  Main usage of this method is for sizeThatFits
 */
-struct AspectLayout<Child: Layout>: Layout {
-	typealias Content = Child.Content
+public struct AspectLayout<Child: Layout>: Layout {
+	public typealias Content = Child.Content
 	
-	var child: Child
-	var aspectRatio: CGSize
+	public var child: Child
+	public var aspectRatio: CGSize
 	
-	init (child: Child, aspectRatio: CGSize) {
+	public init (child: Child, aspectRatio: CGSize) {
 		self.child = child
 		self.aspectRatio = aspectRatio
 	}
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		child.layout(in: rect)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		
 		let aspectHeight = size.width * aspectRatio.height / aspectRatio.width
 		let aspectWidth = size.height * aspectRatio.width / aspectRatio.height
@@ -30,7 +30,7 @@ struct AspectLayout<Child: Layout>: Layout {
 		return CGSize(width: aspectWidth, height: size.height)
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return child.contents
 	}
 }
@@ -38,7 +38,7 @@ struct AspectLayout<Child: Layout>: Layout {
 
 extension Layout {
 	/// Makes an Aspect Layout
-	func withAspect(_ aspectRatio: CGSize) -> AspectLayout<Self> {
+	public func withAspect(_ aspectRatio: CGSize) -> AspectLayout<Self> {
 		return AspectLayout(child: self, aspectRatio: aspectRatio)
 	}
 }

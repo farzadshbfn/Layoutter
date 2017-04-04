@@ -3,15 +3,15 @@ import Foundation
 
 
 // A layout that decorates current layout on margins or corners or center
-struct FloatLayout<Child: Layout>: Layout {
-	typealias Content = Child.Content
+public struct FloatLayout<Child: Layout>: Layout {
+	public typealias Content = Child.Content
 	
-	var child: Child
+	public var child: Child
 	
-	var verticalAlignment: UIControlContentVerticalAlignment
-	var horizontalAlignment: UIControlContentHorizontalAlignment
+	public var verticalAlignment: UIControlContentVerticalAlignment
+	public var horizontalAlignment: UIControlContentHorizontalAlignment
 	
-	init(child: Child,
+	public init(child: Child,
 	     verticalAlignment: UIControlContentVerticalAlignment = .center,
 	     horizontalAlignment: UIControlContentHorizontalAlignment = .center) {
 		
@@ -20,7 +20,7 @@ struct FloatLayout<Child: Layout>: Layout {
 		self.horizontalAlignment = horizontalAlignment
 	}
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		let childRect = self.childRect(in: rect)
 		
 		child.layout(in: childRect)
@@ -51,18 +51,18 @@ struct FloatLayout<Child: Layout>: Layout {
 		return CGRect(x: x, y: y, width: width, height: height)
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		return child.sizeThatFits(size)
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return child.contents
 	}
 }
 
 
 extension Layout {
-	func withFloat(verticalAlignment: UIControlContentVerticalAlignment = .center,
+	public func withFloat(verticalAlignment: UIControlContentVerticalAlignment = .center,
 	               horizontalAlignment: UIControlContentHorizontalAlignment = .center) -> FloatLayout<Self> {
 		return FloatLayout(child: self, verticalAlignment: verticalAlignment, horizontalAlignment: horizontalAlignment)
 	}

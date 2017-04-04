@@ -2,12 +2,12 @@
 import CoreGraphics
 
 /// A layout that renders content on top of each other in the z dimension.
-struct ZStackLayout<Child: Layout>: Layout {
-	typealias Content = Child.Content
+public struct ZStackLayout<Child: Layout>: Layout {
+	public typealias Content = Child.Content
 	
-	var children: [Child]
+	public var children: [Child]
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		for index in children.indices {
 			/*
 			The same rect is used for each layout——the important part for the
@@ -18,7 +18,7 @@ struct ZStackLayout<Child: Layout>: Layout {
 		}
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		return children.reduce(CGSize.zero) {
 			let childSize = $1.sizeThatFits(size)
 			
@@ -29,7 +29,7 @@ struct ZStackLayout<Child: Layout>: Layout {
 		}
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return children.flatMap { $0.contents }
 	}
 	

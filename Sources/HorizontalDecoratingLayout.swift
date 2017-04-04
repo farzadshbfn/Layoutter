@@ -2,17 +2,17 @@
 import Foundation
 
 // A layout that decorates two layouts on left and right
-struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layout where ChildContent.Content == Decoration.Content {
+public struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Layout where ChildContent.Content == Decoration.Content {
 	
-	typealias Content = ChildContent.Content
-	typealias Alignment = (left: Bool, right: Bool)
+	public typealias Content = ChildContent.Content
+	public typealias Alignment = (left: Bool, right: Bool)
 	
-	var decoration: InsetLayout<Decoration>
-	var content: InsetLayout<ChildContent>
+	public var decoration: InsetLayout<Decoration>
+	public var content: InsetLayout<ChildContent>
 	
-	var alignment: UIControlContentHorizontalAlignment
+	public var alignment: UIControlContentHorizontalAlignment
 	
-	init(decoration: Decoration,
+	public init(decoration: Decoration,
 	     content: ChildContent,
 	     spacing: CGFloat = 8.0,
 	     alignment: UIControlContentHorizontalAlignment = .center) {
@@ -22,7 +22,7 @@ struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Lay
 		self.alignment = alignment
 	}
 	
-	mutating func layout(in rect: CGRect) {
+	public mutating func layout(in rect: CGRect) {
 		let contentRect = self.contentRect(in: rect)
 		let decorationRect = self.decorationRect(in: rect)
 		
@@ -30,7 +30,7 @@ struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Lay
 		decoration.layout(in: decorationRect)
 	}
 	
-	func decorationRect(in rect: CGRect) -> CGRect {
+	public func decorationRect(in rect: CGRect) -> CGRect {
 		var dstRect = rect
 		
 		switch alignment {
@@ -49,7 +49,7 @@ struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Lay
 		return dstRect
 	}
 	
-	func contentRect(in rect: CGRect) -> CGRect {
+	public func contentRect(in rect: CGRect) -> CGRect {
 		var dstRect = rect
 		
 		switch alignment {
@@ -71,7 +71,7 @@ struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Lay
 		return dstRect
 	}
 	
-	func sizeThatFits(_ size: CGSize) -> CGSize {
+	public func sizeThatFits(_ size: CGSize) -> CGSize {
 		let contentSize: CGSize!
 		let decorationSize: CGSize!
 		
@@ -100,7 +100,7 @@ struct HorizontalDecoratingLayout<Decoration: Layout, ChildContent: Layout>: Lay
 		return CGSize(width: width, height: height)
 	}
 	
-	var contents: [Content] {
+	public var contents: [Content] {
 		return decoration.contents + content.contents
 	}
 }

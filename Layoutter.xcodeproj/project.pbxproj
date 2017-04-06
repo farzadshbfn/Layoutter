@@ -22,7 +22,6 @@
 		E24984481E754C290083D374 /* UIVIew+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843C1E754C290083D374 /* UIVIew+Layout.swift */; };
 		E24984491E754C290083D374 /* VerticalDecoratingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */; };
 		E249844A1E754C290083D374 /* ZStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249843E1E754C290083D374 /* ZStackLayout.swift */; };
-		E249844F1E759B180083D374 /* Layoutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249844E1E759B180083D374 /* Layoutter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		E249843C1E754C290083D374 /* UIVIew+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIVIew+Layout.swift"; path = "Sources/UIVIew+Layout.swift"; sourceTree = SOURCE_ROOT; };
 		E249843D1E754C290083D374 /* VerticalDecoratingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalDecoratingLayout.swift; path = Sources/VerticalDecoratingLayout.swift; sourceTree = SOURCE_ROOT; };
 		E249843E1E754C290083D374 /* ZStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZStackLayout.swift; path = Sources/ZStackLayout.swift; sourceTree = SOURCE_ROOT; };
-		E249844E1E759B180083D374 /* Layoutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layoutter.swift; path = Sources/Layoutter.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				E249843A1E754C290083D374 /* Layout.swift */,
 				E24984041E754A4F0083D374 /* Layoutter.h */,
 				E24984051E754A4F0083D374 /* Info.plist */,
-				E249844E1E759B180083D374 /* Layoutter.swift */,
 			);
 			path = Layoutter;
 			sourceTree = "<group>";
@@ -256,7 +253,6 @@
 			files = (
 				E24984491E754C290083D374 /* VerticalDecoratingLayout.swift in Sources */,
 				E24984481E754C290083D374 /* UIVIew+Layout.swift in Sources */,
-				E249844F1E759B180083D374 /* Layoutter.swift in Sources */,
 				E24984471E754C290083D374 /* SizeLayout.swift in Sources */,
 				E249844A1E754C290083D374 /* ZStackLayout.swift in Sources */,
 				E24984451E754C290083D374 /* InsetLayout.swift in Sources */,
